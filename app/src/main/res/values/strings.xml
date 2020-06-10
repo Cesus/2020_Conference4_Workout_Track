@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Workout Tracker</string>
+    <string name="workout_a">Workout A</string>
+    <string name="squat_1rm">Squat 1RM</string>
+    <string name="bench_1rm">Bench 1RM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="workout_b">Workout B</string>
+    <string name="deadlift_1rm">Deadlift 1RM</string>
+    <string name="press_1rm">Press 1RM</string>
+</resources>

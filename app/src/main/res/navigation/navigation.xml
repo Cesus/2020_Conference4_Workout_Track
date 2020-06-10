@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myworkouttracker.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_workoutFragmentA"
+            app:destination="@id/workoutFragmentA" />
+        <action
+            android:id="@+id/action_homeFragment_to_workoutFragmentB"
+            app:destination="@id/workoutFragmentB" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackerFragment"
+        android:name="com.example.myworkouttracker.tracker.TrackerFragment"
+        android:label="fragment_tracker"
+        tools:layout="@layout/fragment_tracker" >
+        <action
+            android:id="@+id/action_trackerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="activity_A_RM"
+            app:argType="float"/>
+        <argument
+            android:name="activity_B_RM"
+            app:argType="float"/>
+        <argument
+            android:name="workout_type"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/workoutFragmentA"
+        android:name="com.example.myworkouttracker.form.WorkoutFragmentA"
+        android:label="workoutFragmentA"
+        tools:layout="@layout/fragment_workout_a">
+        <action
+            android:id="@+id/action_workoutFragmentA_to_trackerFragment"
+            app:destination="@id/trackerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutFragmentB"
+        android:name="com.example.myworkouttracker.form.WorkoutFragmentB"
+        android:label="WorkoutFragmentB"
+        tools:layout="@layout/fragment_workout_b">
+        <action
+            android:id="@+id/action_workoutFragmentB_to_trackerFragment"
+            app:destination="@id/trackerFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="WorkoutBViewModel"
+            type="com.example.myworkouttracker.form.WorkoutBViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".tracker.TrackerFragment">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="72dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{() -> WorkoutBViewModel.onStartTracking()}"
+            app:backgroundTint="#FFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/workout_B_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="293dp"
+            android:text="@string/workout_b"
+            android:textSize="38sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextDeadliftNum"
+            android:layout_width="165dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints="Deadlift 1RM"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textViewDeadlift"
+            app:layout_constraintTop_toBottomOf="@+id/workout_B_title" />
+
+        <TextView
+            android:id="@+id/textViewDeadlift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            android:labelFor="@id/editTextDeadliftNum"
+            android:text="@string/deadlift_1rm"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workout_B_title" />
+
+        <TextView
+            android:id="@+id/textViewPress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="100dp"
+            android:labelFor="@id/editTextPressNum"
+            android:text="@string/press_1rm"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workout_B_title" />
+
+        <EditText
+            android:id="@+id/editTextPressNum"
+            android:layout_width="165dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="40dp"
+            android:autofillHints="Press 1RM"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textViewDeadlift"
+            app:layout_constraintTop_toBottomOf="@+id/workout_B_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
