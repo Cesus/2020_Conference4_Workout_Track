@@ -1,5 +1,7 @@
 package com.example.myworkouttracker
 
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.roundToInt
 
 fun convertToStringWeight(weight: String) : String = "$weight lbs"

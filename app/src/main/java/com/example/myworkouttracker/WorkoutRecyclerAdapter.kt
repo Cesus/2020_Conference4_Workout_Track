@@ -3,8 +3,9 @@ package com.example.myworkouttracker
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myworkouttracker.models.Workout
 import kotlinx.android.synthetic.main.layout_workout_list_item.view.*
 
 class WorkoutRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -26,7 +27,34 @@ class WorkoutRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     fun submitList(workoutList: List<Workout>) {
+        val oldList = items
+        val diffResult: DiffUtil.DiffResult = DiffUtil.calculateDiff(
+            WorkoutItemDiffCallback(oldList, workoutList)
+        )
         items = workoutList
+        diffResult.dispatchUpdatesTo(this)
+    }
+
+    class WorkoutItemDiffCallback(var oldWorkOutList: List<Workout>, var newWorkOutList: List<Workout>) : DiffUtil.Callback(){
+
+        // calls to decide whether two items represent the same item
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return (oldWorkOutList.get(oldItemPosition).pk == newWorkOutList.get(newItemPosition).pk)
+        }
+
+        override fun getOldListSize(): Int {
+            return oldWorkOutList.size
+        }
+
+        override fun getNewListSize(): Int {
+            return newWorkOutList.size
+        }
+
+        // calls to check whether two items have the same DATA
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldWorkOutList.get(oldItemPosition).equals(newWorkOutList.get(newItemPosition))
+        }
+
     }
 
     override fun getItemCount(): Int {

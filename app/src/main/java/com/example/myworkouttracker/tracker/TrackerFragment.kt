@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myworkouttracker.*
-import com.example.myworkouttracker.models.Workout
+import com.example.myworkouttracker.Workout
 import kotlinx.android.synthetic.main.fragment_tracker.*
 
 class TrackerFragment : Fragment() {
@@ -16,7 +19,7 @@ class TrackerFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tracker, container, false)
     }
@@ -67,6 +70,7 @@ class TrackerFragment : Fragment() {
 
         list.add(
             Workout(
+                1,
                 activityNameA,
                 "${roundToTwoPointFive(0.65 * activityATrainingMax)}",
                 "1",
@@ -75,6 +79,7 @@ class TrackerFragment : Fragment() {
         )
         list.add(
             Workout(
+                2,
                 activityNameA,
                 "${roundToTwoPointFive(0.75 * activityATrainingMax)}",
                 "1",
@@ -83,6 +88,7 @@ class TrackerFragment : Fragment() {
         )
         list.add(
             Workout(
+                3,
                 activityNameA,
                 "${roundToTwoPointFive(0.85 * activityATrainingMax)}",
                 "1",
@@ -91,6 +97,7 @@ class TrackerFragment : Fragment() {
         )
         list.add(
             Workout(
+                4,
                 activityNameA,
                 "${roundToTwoPointFive(0.65 * activityATrainingMax)}",
                 "5",
@@ -99,6 +106,7 @@ class TrackerFragment : Fragment() {
         )
         list.add(
             Workout(
+                5,
                 activityNameB,
                 "${roundToTwoPointFive(0.65 * activityBTrainingMax)}",
                 "1",
@@ -107,6 +115,7 @@ class TrackerFragment : Fragment() {
         )
         list.add(
             Workout(
+                6,
                 activityNameB,
                 "${roundToTwoPointFive(0.75 * activityBTrainingMax)}",
                 "1",
@@ -115,6 +124,7 @@ class TrackerFragment : Fragment() {
         )
         list.add(
             Workout(
+                7,
                 activityNameB,
                 "${roundToTwoPointFive(0.85 * activityBTrainingMax)}",
                 "1",
@@ -123,6 +133,7 @@ class TrackerFragment : Fragment() {
         )
         list.add(
             Workout(
+                8,
                 activityNameB,
                 "${roundToTwoPointFive(0.65 * activityBTrainingMax)}",
                 "5",
