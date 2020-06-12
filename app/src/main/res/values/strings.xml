@@ -8,4 +8,6 @@
     <string name="workout_b">Workout B</string>
     <string name="deadlift_1rm">Deadlift 1RM</string>
     <string name="press_1rm">Press 1RM</string>
+    <string name="info">Click on a workout to start</string>
+    <string name="go">Go</string>
 </resources>

@@ -7,8 +7,6 @@ import kotlinx.android.synthetic.main.fragment_tracker.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var workoutAdapter: WorkoutRecyclerAdapter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         // just inflates activity main
         super.onCreate(savedInstanceState)

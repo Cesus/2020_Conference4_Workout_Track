@@ -4,10 +4,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.roundToInt
 
+// Converts a int into a formatted string
 fun convertToStringWeight(weight: String) : String = "$weight lbs"
-
 fun convertToStringSets(sets: String) : String = "$sets sets"
-
 fun convertToStringReps(reps: String) : String = "$reps reps"
 
 // Rounds to the nearest 2.5 (matches the minimum weight of plates)

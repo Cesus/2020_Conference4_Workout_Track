@@ -5,18 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myworkouttracker.*
-import com.example.myworkouttracker.Workout
+import com.example.myworkouttracker.models.Workout
 import kotlinx.android.synthetic.main.fragment_tracker.*
 
 class TrackerFragment : Fragment() {
 
     private lateinit var workoutAdapter: WorkoutRecyclerAdapter
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -25,6 +21,7 @@ class TrackerFragment : Fragment() {
     }
 
     private fun addDataSet(){
+        // get an instance of the data set, then 'submits' the data to the recyclerview adapter
         val data = createDataSet()
         workoutAdapter.submitList(data)
     }
@@ -32,7 +29,7 @@ class TrackerFragment : Fragment() {
     // populate the views now that the layout has been inflated
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // RecyclerView node initialized here
+        // RecyclerView node initialized here - .apply implicitly refers to recyclerview inside of apply, increasing readability
         recycler_view.apply {
             // set a LinearLayoutManager to handle Android RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
@@ -40,14 +37,15 @@ class TrackerFragment : Fragment() {
             val topSpacingDecoration = TopItemSpacingDecoration(30)
             addItemDecoration(topSpacingDecoration)
             // set the custom adapter to the RecyclerView
-            workoutAdapter = WorkoutRecyclerAdapter()
+            workoutAdapter =
+                WorkoutRecyclerAdapter()
             adapter = workoutAdapter
             addDataSet()
         }
     }
 
     private fun createDataSet(): ArrayList<Workout>{
-
+        // this dataset takes the values from the user (args get data from previous fragment) and transforms it into a training weight
         val args = TrackerFragmentArgs.fromBundle(arguments!!)
         val userInputA = args.activityARM
         val userInputB = args.activityBRM
@@ -144,4 +142,3 @@ class TrackerFragment : Fragment() {
     }
 
 }
-

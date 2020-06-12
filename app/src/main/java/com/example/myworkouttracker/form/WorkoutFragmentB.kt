@@ -32,7 +32,7 @@ class WorkoutFragmentB : Fragment() {
 
         binding.workoutBViewModel = workoutBViewModel
 
-        // Sets up event listening to navigate the player when the user wants to navigates
+        // Sets up event listening to navigate the user to the final fragment
         workoutBViewModel.navigateToTracker.observe(this, Observer {
             if (it == true) {
                 val userDL = editTextDeadliftNum.text.toString()

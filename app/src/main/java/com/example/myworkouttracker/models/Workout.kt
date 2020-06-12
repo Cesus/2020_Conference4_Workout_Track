@@ -1,4 +1,4 @@
-package com.example.myworkouttracker
+package com.example.myworkouttracker.models
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -26,6 +26,7 @@ data class Workout (
     var reps: String
 
 ) {
+    // this method returns true if everything is the same
     override fun equals(other: Any?): Boolean {
         if (javaClass != other?.javaClass) return false
 
