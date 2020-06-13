@@ -5,5 +5,6 @@ This program was designed for my grade 11 4th conference. It is a workout displa
 
 ## Screenshots
 ![](workout_screenshots/Screenshot_1591985175.png) <br/>
-![](images/Annotation%202020-04-13%20085632.png) <br/>
-![](images/Annotation%202020-04-13%20085603.png)
+![](workout_screenshots/Screenshot_1591985180.png) <br/>
+![](workout_screenshots/Screenshot_1591985193.png) <br/>
+![](workout_screenshots/Screenshot_1591985196.png) 
